@@ -1,0 +1,77 @@
+.button {
+  background-color: #4c61af;
+  border: solid;
+  color: black;
+  padding: 0.2em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 4em;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.question {
+  width: 40em;
+}
+
+.answer-prompt {
+  font-size: 0.8em;
+  color: #555555;
+  font-weight: bold;
+}
+
+.answer-option:before {
+  content: "\a";
+  white-space: pre;
+}
+
+.answer-text {
+  width: 510px;
+}
+
+#add-button {
+  padding: 0.1em;
+  font-size: 2em;
+  background-color: #21cf27;
+}
+
+#save-button {
+  padding: 0.1em;
+  font-size: 2em;
+  background-color: #2170cf;
+}
+
+#delete-button {
+  padding: 0.1em;
+  font-size: 2em;
+  background-color: #cf2121;
+}
+
+.correct.show {
+  background-color: #18a300;
+}
+
+.fix {
+  background-color: #d1c328;
+}
+
+.wrong.show {
+  background-color: #cf2121;
+}
+
+#mark-button {
+  padding: 0.1em;
+  font-size: 2em;
+  background-color: #21cf27;
+  margin-top: 20px;
+}
+
+.question-div {
+  width: 540px;
+  margin-bottom: 5px;
+}
+
+.student-answer-text {
+  display: inline-block;
+}

@@ -2,7 +2,7 @@ let questionCount = 0;
 let currentAnswerAmount = [];
 
 let xhttp = new XMLHttpRequest();
-const endPoint = "http://localhost:5000/";
+const endPoint = "https://ericsondraalass1backend.herokuapp.com/";
 
 
 
@@ -287,7 +287,7 @@ document.getElementById("save-button").onclick = function () {
 function createDBQuestion(question){
     xhttp = new XMLHttpRequest();
     xhttp.open("POST", endPoint + "questions", true);
-    xhttp.setRequestHeader("Content-type", "text/plain");
+    xhttp.setRequestHeader('Content-Type', 'application/json');
     xhttp.send( JSON.stringify(question));
     console.log("send");
     xhttp.onreadystatechange = function () {
@@ -301,7 +301,7 @@ function createDBQuestion(question){
 function editDBQuestion(question){
     xhttp = new XMLHttpRequest();
     xhttp.open("PUT", endPoint + "questions", true);
-    xhttp.setRequestHeader("Content-type", "text/plain");
+    xhttp.setRequestHeader('Content-Type', 'application/json');
     xhttp.send( JSON.stringify(question));
     xhttp.onreadystatechange = function () {
         if((this.readyState == 4) && (this.status==200)){
@@ -313,7 +313,7 @@ function editDBQuestion(question){
 function deleteDBQuestion(question){
     xhttp = new XMLHttpRequest();
     xhttp.open("DELETE", endPoint + "questions", true);
-    xhttp.setRequestHeader("Content-type", "text/plain");
+    xhttp.setRequestHeader('Content-Type', 'application/json');
     xhttp.send(question);
     xhttp.onreadystatechange = function () {
         if((this.readyState == 4) && (this.status==200)){
@@ -449,6 +449,7 @@ loadQuestionsFromDB();
 function loadQuestionsFromDB(){
     xhttp = new XMLHttpRequest();
     xhttp.open("GET", endPoint + "questions", true);
+    xhttp.setRequestHeader('Content-Type', 'application/json');
     xhttp.send();
     xhttp.onreadystatechange = function () {
         if((this.readyState == 4) && (this.status==200)){
